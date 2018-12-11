@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jenkins-volume-pvc
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  # hostPath:
+  #   path: "/data/jenkins/"
+  gcePersistentDisk:
+    pdName: jenkins-volume
+    fsType: ext4
