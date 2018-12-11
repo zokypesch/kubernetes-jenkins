@@ -14,4 +14,4 @@ gcloud container clusters delete belajar-ci --zone asia-east1-a
 
 kubectl delete pod,pvc,service,pv,deployment jenkins
 
-ok
+kubectl exec -it `kubectl get pods --selector=app=jenkins --output=jsonpath={.items..metadata.name}` cat /var/jenkins_home/secrets/initialAdminPassword

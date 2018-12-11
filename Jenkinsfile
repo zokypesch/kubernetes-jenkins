@@ -14,13 +14,13 @@ node {
     env.BUILDIMG=imageName
     env.BUILD_TAG=tag
 
-    stage "Build"
+    // stage "Build"
     
-        sh "docker build -t ${imageName} -f applications/Dockerfile applications"
+    //     sh "docker build -t ${imageName} -f applications/Dockerfile applications"
     
-    stage "Push"
+    // stage "Push"
 
-        sh "docker push ${imageName}"
+    //     sh "docker push ${imageName}"
 
     stage "Deploy"
 

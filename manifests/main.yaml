@@ -109,6 +109,7 @@ spec:
           mountPath: /var/jenkins_home/.kube
         - name: docker
           mountPath: /var/run/docker.sock
+          #harus di pikirin nih !!
         # - name: jenkins-persistent-storage
         #   mountPath: /var/jenkins_home
         ports:
