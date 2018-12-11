@@ -28,7 +28,9 @@ data:
         }
       }
     }
---
+
+---
+
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -65,7 +67,9 @@ spec:
             - name: nginx-config-volume
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
---
+
+---
+
 apiVersion: v1
 kind: Service
 metadata:
