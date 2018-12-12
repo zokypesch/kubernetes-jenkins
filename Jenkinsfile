@@ -20,7 +20,7 @@ node {
     
     stage "Login"
         
-        sh "docker login -u="zokypesch" -p="maulanakerenaja""
+        sh "docker login -u='zokypesch' -p='maulanakerenaja'"
     
     stage "Push"
 
