@@ -23,11 +23,13 @@ RUN gpasswd -a jenkins dsock
 RUN newgrp docker
 RUN gpasswd -a jenkins docker
 RUN usermod -aG docker jenkins
-RUN chown jenkins. /var/run/docker.sock
+# RUN chown jenkins. /var/run/docker.sock
 RUN echo "jenkins          ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # RUN chmod 777 /var/run/docker.sock
 
 COPY . /usr/share/custom
 
 USER jenkins
+
+CMD chown jenkins. /var/run/docker.sock
 
