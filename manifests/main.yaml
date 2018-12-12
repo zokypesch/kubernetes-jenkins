@@ -7,7 +7,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 5Gi
 
 ---
 
@@ -112,8 +112,8 @@ spec:
         - name: docker
           mountPath: /var/run/docker.sock
           #harus di pikirin nih !!
-        # - name: jenkins-persistent-storage
-        #   mountPath: /var/jenkins_home
+        - name: jenkins-persistent
+          mountPath: /var/
         ports:
         - containerPort: 8080
           name: jenkins
@@ -129,6 +129,6 @@ spec:
       - name: docker
         hostPath:
           path: /var/run/docker.sock
-      - name: jenkins-persistent-storage
+      - name: jenkins-persistent
         persistentVolumeClaim:
           claimName: jenkins-claim
