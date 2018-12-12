@@ -113,7 +113,7 @@ spec:
           mountPath: /var/run/docker.sock
           #harus di pikirin nih !!
         - name: jenkins-persistent
-          mountPath: /var/
+          mountPath: /var
         ports:
         - containerPort: 8080
           name: jenkins
