@@ -48,7 +48,7 @@ spec:
         configMap:
           name: nginx-config
       containers:
-        - image: zokypesch/my-php-example:latest #ini repo pribadi gw ada di docker hub
+        - image: zokypesch/my-php-example:$BUILD_TAG #ini repo pribadi gw ada di docker hub
           name: app
           volumeMounts:
             - name: shared-files
