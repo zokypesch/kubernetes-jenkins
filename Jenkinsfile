@@ -18,9 +18,9 @@ node {
     
         sh "docker build -t ${imageName} -f applications/Dockerfile applications"
     
-    stage "Push"
+    // stage "Push"
 
-        sh "docker push ${imageName}"
+    //     sh "docker push ${imageName}"
 
     stage "Deploy"
 

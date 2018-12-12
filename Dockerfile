@@ -18,18 +18,20 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/so
 apt-get update && apt-get install -y kubectl
 
 # Grant jenkins user group access to /var/run/docker.sock
-RUN addgroup --gid 1001 dsock
+RUN addgroup --gid 412 dsock
 RUN gpasswd -a jenkins dsock
-RUN newgrp docker
-RUN gpasswd -a jenkins docker
-RUN usermod -aG docker jenkins
+RUN newgrp dsock
+# RUN gpasswd -a jenkins docker
+# RUN usermod -aG docker jenkins
+# RUN newgrp docker
 # RUN chown jenkins. /var/run/docker.sock
-RUN echo "jenkins          ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# RUN echo "jenkins          ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # RUN chmod 777 /var/run/docker.sock
 
 COPY . /usr/share/custom
 
+# RUN echo "chown jenkins. /var/run/docker.sock" >> /etc/rc.local
+
 USER jenkins
 
-CMD chown jenkins. /var/run/docker.sock
-
+# CMD ["chown jenkins. /var/run/docker.sock"]
