@@ -8,7 +8,7 @@ node {
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
     // tag = "crot"
-    appName = "my-jenkins"
+    appName = "my-php-example"
     registryHost = "zokypesch/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
