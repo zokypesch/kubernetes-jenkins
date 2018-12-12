@@ -36,11 +36,13 @@ data:
     #!/bin/bash -v
 
     kubectl config set-credentials jenkins --token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
-    kubectl config set-cluster belajar-ci --server="35.194.173.197:443" --certificate-authority="/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-    kubectl config set-context jenkins-belajar-ci --cluster=belajar-ci --user=jenkins --namespace=$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)
+    kubectl config set-cluster gke_test-project-225004_asia-east1-a_belajar-ci --server="https://35.194.173.197" --certificate-authority="/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+    kubectl config set-context jenkins-belajar-ci --cluster=gke_test-project-225004_asia-east1-a_belajar-ci --user=jenkins
     kubectl config use-context jenkins-belajar-ci
     chmod 755 ~/.kube/config
 
+# kubectl config set-cluster belajar-ci --server="35.194.173.197"
+# kubectl config set-cluster belajar-ci --server="130.211.241.249" 
   # old run from local
   # kubectl-config-context.sh: |-
   #   #!/bin/bash -v
